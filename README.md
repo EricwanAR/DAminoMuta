@@ -1,5 +1,5 @@
 # AI-based D-amino acid substitution for optimizing antimicrobial peptides to treat multidrug-resistant bacterial infection
-This repository contains the code for the paper "AI-based D-amino acid substitution for optimizing antimicrobial peptides to treat multidrug-resistant bacterial infection"
+This repository contains the official code for the paper "AI-based D-amino acid substitution for optimizing antimicrobial peptides to treat multidrug-resistant bacterial infection"
 
 ## Requirements
 ```
@@ -51,6 +51,7 @@ You can simple replace `main.py` with `infer.py` in your training command to do 
 For case study scanning, please use `infer_case.py` with an additional argument `--case r2` or `--case {YOUR_PEPTIDE_SEQUENCE}`. If you wish to inference with UDA weights, please use `--uda` argument.
 
 Inference results will be saved in the weights directory in `csv` format, e.g. `/run-cls/rn18-diff-16-mamba-pcs-768-ce-32-0.001-50/preds_test.csv`.
+For wet lab ranking, please refer to wetlab_ranking.py in the wetlab_rank folder.
 
 ## Pretrained Models
 See [here](https://drive.google.com/drive/folders/1bv0pSaZ947dHjEf2g5b5d2JBDpvnNSTF?usp=sharing)
