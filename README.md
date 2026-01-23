@@ -55,3 +55,16 @@ For wet lab ranking, please refer to wetlab_ranking.py in the wetlab_rank folder
 
 ## Pretrained Models
 See [here](https://drive.google.com/drive/folders/1bv0pSaZ947dHjEf2g5b5d2JBDpvnNSTF?usp=sharing)
+
+# Citation
+Please cite the following work if you find this work useful:
+```
+@article{zhao2026ai,
+  title={AI-Based D-Amino Acid Substitution for Optimizing Antimicrobial Peptides to Treat Multidrug-Resistant Bacterial Infection},
+  author={Zhao, Yinuo and Kong, Qingzhou and Gong, Haifan and Li, Lixiang and Fu, Jialu and Wan, Boyao and Wang, Peizhu and Li, Xiaojuan and Wang, Yue and Zhang, Jinghui and others},
+  journal={Advanced Science},
+  pages={e18522},
+  year={2026},
+  publisher={Wiley Online Library}
+}
+```
