@@ -57,7 +57,8 @@ parser.add_argument('--decay', type=float, default=0.0005,
                     help='weight decay (default: 0.0005)')
 parser.add_argument('--metric-avg', type=str, dest='metric_avg', default='macro',
                     help='metric average type')
-
+parser.add_argument('--glob-feat', action='store_true', default=False,
+                    help='use global features')
 parser.add_argument('--loss', type=str, default='mse',
                     help='loss function')
 parser.add_argument('--dir', action='store_true', default=False,
@@ -94,9 +95,9 @@ def main():
         raise NotImplementedError("unimplemented task")
     
     if args.q_encoder in ['cnn', 'rn18']:
-        weight_dir = f'./run-{args.task}/{"non-siamese-" if args.non_siamese else ""}{args.q_encoder}-{args.fusion}-{args.channels}{f"-{args.side_enc}" if args.side_enc else ""}{"-mixpcs" if args.mix_pcs else ""}{"-pcs" if args.pcs==True else ""}{"-" + "x".join(str(n) for n in args.resize) if args.resize else ""}{"-gf" if args.glob_feat else ""}{"-oneway" if args.one_way else ""}-{args.loss + "-dir" if args.dir else args.loss}-{str(args.batch_size)}-{str(args.lr)}-{str(args.epochs)}'
+        weight_dir = f'./run-{args.task}/{"non-siamese-" if args.non_siamese else ""}{args.q_encoder}-{args.fusion}-{args.channels}{f"-{args.side_enc}" if args.side_enc else ""}{"-mixpcs" if args.mix_pcs else ""}{"-pcs" if args.pcs==True else ""}{"-" + "x".join(str(n) for n in args.resize) if args.resize else ""}{"-oneway" if args.one_way else ""}-{args.loss + "-dir" if args.dir else args.loss}-{str(args.batch_size)}-{str(args.lr)}-{str(args.epochs)}'
     else:
-        weight_dir = f'./run-{args.task}/{"non-siamese-" if args.non_siamese else ""}{args.q_encoder}-{args.fusion}-{args.channels}{"-gf" if args.glob_feat else ""}{"-oneway" if args.one_way else ""}-{args.loss + "-dir" if args.dir else args.loss}-{str(args.batch_size)}-{str(args.lr)}-{str(args.epochs)}'
+        weight_dir = f'./run-{args.task}/{"non-siamese-" if args.non_siamese else ""}{args.q_encoder}-{args.fusion}-{args.channels}{"-oneway" if args.one_way else ""}-{args.loss + "-dir" if args.dir else args.loss}-{str(args.batch_size)}-{str(args.lr)}-{str(args.epochs)}'
 
     if not os.path.exists(weight_dir):
         os.makedirs(weight_dir)
