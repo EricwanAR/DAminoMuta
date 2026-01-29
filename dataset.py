@@ -109,7 +109,7 @@ def process_label(ratio, task):
         raise ValueError("Unknown task, please use 'reg' or 'cls'")
 
 def load_data(xlsx_file):
-    df = pd.read_excel(xlsx_file)
+    df = pd.read_excel(xlsx_file, engine="calamine")
     
     groups = {}
     for _, row in df.iterrows():
